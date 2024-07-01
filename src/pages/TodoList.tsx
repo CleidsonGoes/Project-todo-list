@@ -1,6 +1,12 @@
+import { useContext } from "react"
+import Context from "../context/Context"
+
 function TodoList() {
+
+    const {user} = useContext(Context)
+
     return(
-        <h1>Página de Todo List</h1>
+        <h1>Welcome {user}</h1>
     )
 }
 

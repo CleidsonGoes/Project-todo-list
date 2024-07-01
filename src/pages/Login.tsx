@@ -1,14 +1,17 @@
-import { ChangeEvent, FormEvent, useState } from "react"
+import { ChangeEvent, FormEvent, useContext, useState } from "react"
 import imageLogin from "../assets/pngwing.com (1).png"
 import { useNavigate } from "react-router-dom";
+import Context from "../context/Context";
 
 
 function Login() {
 
     const navigate = useNavigate();
+    const {onLogin} = useContext(Context);
 
     // const [username, setUsername] = useState('')
     // const [password, setPassword] = useState('')
+
     
     const [inputs, setInputs] = useState({
         username: '',
@@ -22,6 +25,7 @@ function Login() {
     const handleSubmit = (event: FormEvent) => {
         // para evitar o carregamento padrão do botão de enviar
         event.preventDefault();
+        onLogin(inputs.username)
         navigate("/todo")
     }
 
