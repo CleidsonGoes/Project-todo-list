@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { Todo } from "../../api/todoApi"
 import Context from "./Context";
 
 type ProviderProps = {
@@ -13,6 +14,7 @@ export type ProviderValues = {
 function Provider({children}: ProviderProps) {
 
     const [user, setUser] = useState('');
+    const [todos, setTodos] = useState<Todo[]>([]);
 
     const onLogin = (username: string) => {
         setUser(username);
