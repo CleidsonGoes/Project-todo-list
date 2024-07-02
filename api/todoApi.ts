@@ -18,7 +18,7 @@ export async function fetchTodos(): Promise<Todo []> {
 }
 
 export async function postTodo (todo: string) {
-    const response = await fetch('S(URL)/todos', {
+    const response = await fetch(`${URL}/todos`, {
         method: 'POST',
         headers: {
             Accept: 'application/json',
