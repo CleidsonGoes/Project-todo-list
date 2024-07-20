@@ -5,7 +5,7 @@ import {Todo} from "../../api/todoApi"
 
 function TodoList() {
 
-    const {user, todos /*, getTodos, loading */} = useContext(Context)
+    const {user, todos, getTodos, loading} = useContext(Context)
 
     // useEffect(() => {
     //     if(!todos.length) {
